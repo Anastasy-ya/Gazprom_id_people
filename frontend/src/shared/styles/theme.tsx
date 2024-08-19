@@ -1,5 +1,3 @@
-// import { ThemeConfig } from "antd/es/config-provider/context";
-
 const theme = {
   token: {
     fontFamily: "Roboto, Segoe UI, Arial, sans-serif",
@@ -41,6 +39,38 @@ const theme = {
       // borderColorDisabled: 'transparent', // Убираем обводку у кнопок в состоянии disabled
       contentFontSize: 14, // Размер шрифта для кнопок по умолчанию
     },
+    // Typography: {
+    //   styleOverrides: {
+    //     h1: {
+    //       margin: 0,
+    //       padding: 0,
+    //     },
+    //     h2: {
+    //       margin: 0,
+    //       padding: 0,
+    //     },
+    //     h3: {
+    //       margin: 0,
+    //       padding: 0,
+    //     },
+    //     h4: {
+    //       margin: 0,
+    //       padding: 0,
+    //     },
+    //     h5: {
+    //       margin: 0,
+    //       padding: 0,
+    //     },
+    //     h6: {
+    //       margin: 0,
+    //       padding: 0,
+    //     },
+    //     p: {
+    //       margin: 0,
+    //       padding: 0,
+    //     },
+    //   },
+    // },
   },
 };
 

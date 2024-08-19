@@ -7,13 +7,14 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  box-sizing: border-box;
 }
 
 * {
   /* border: 1px red solid; */
 }
 
-/* color: var(--main-blue); */
+/* для вставки - color: var(--main-blue); */
 :root {
   --black: #212121;
 
@@ -58,4 +59,9 @@ body {
   --error: #ff603b;
   --notifications: #ff4d4f;
   --input-error: #f81d22;
+}
+
+body, h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
 }

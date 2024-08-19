@@ -1,11 +1,9 @@
-import React from "react";
 import { Layout, Avatar } from "antd";
 import { BellOutlined, QuestionCircleOutlined } from "@ant-design/icons";
 import styled from "styled-components";
-import LogoImage from "../shared/components/ui/LogoImage";
-import MenuMain from "../shared/components/ui/Menu";
+import LogoImage from "../shared/components/ui/LogoImage/LogoImage";
 // import QuestionCircleOutlined from "@ant-design/icons";
-import Bell from "../shared/components/ui/Bell";
+import Bell from "../shared/components/ui/Bell/Bell";
 
 // const { Header } = Layout;
 
@@ -13,9 +11,6 @@ const StyledHeader = styled(Layout.Header)`
   height: 80px;
   flex-grow: 1;
   padding: 0;
-  
-  /* background-color: white; */
-  /* padding: 0 32px 0 0; */
 `;
 
 const BoundingBox = styled.div`

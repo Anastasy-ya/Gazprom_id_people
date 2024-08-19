@@ -1,33 +1,92 @@
 import styled from "styled-components";
-import { Card, Typography, Avatar, Row, Col } from "antd";
-import TagCloud from "../shared/components/ui/Tags";
+import { Card, Typography, Avatar, Row, Col, Tooltip } from "antd";
+// import UserOutlined from "@ant-design/icons";
+import TagCloud from "../shared/components/ui/Tags/Tags";
+import Contact from "../features/contact/Contact";
+import icon from "../shared/assets/icon.jpeg";
 
-const { Title, Text } = Typography;
-const Flex = styled.div`
-  display: flex;
-  gap: 12px;
-  flex-direction: column;
-`;
+const { Title } = Typography;
 
 const StyledCard = styled(Card)`
   width: 618;
-  height: auto;
+  /* height: auto; */
   border-radius: 2;
   border: 1px solid #d9d9d9;
-  margin: 16px 0;
+  margin: 0;
+  /* display: flex;
+  flex-direction: column;
+  gap: 28px; */
+
+  .ant-card-body {
+    padding: 16px;
+  }
+
+  /* background-color: red; */
 `;
 
-const ProjectDescription = () => {
+const data = {
+  //TODO заменить данными
+  id: 0,
+  name: "string",
+  description: "string",
+  status: {
+    id: 0,
+    name: "string",
+    color: "#96B9fA",
+  },
+  tags: [
+    {
+      id: 0,
+      name: "В работе",
+      color: "#a8F",
+    },
+    {
+      id: 1,
+      name: "Внутренний  продукт",
+      color: "#a8F",
+    },
+    {
+      id: 2,
+      name: "Веб-сервиc",
+      color: "#a8F",
+    },
+    {
+      id: 3,
+      name: "В работе",
+      color: "#a8F",
+    },
+    {
+      id: 4,
+      name: "Внутренний  продукт",
+      color: "#a8F",
+    },
+    {
+      id: 5,
+      name: "Веб-сервиc",
+      color: "#a8F",
+    },
+  ],
+  team_members: {
+    id: 0,
+    image: "string",
+  },
+  team_extra_count: 0,
+  director: {
+    id: 0,
+    full_name: "string",
+    position: "string",
+    phone_number: "string",
+    telegram: "string",
+    email: "user@example.com",
+    image: "string",
+    employment_type: 0,
+    ms_teams: "user@example.com",
+  },
+};
+
+const ProjectCard = () => {
   return (
-    <StyledCard
-      // style={{
-      //   width: 618,
-      //   height: "auto",
-      //   borderRadius: 2,
-      //   border: "1px solid #d9d9d9",
-      //   margin: "16px 0",
-      // }}
-    >
+    <StyledCard>
       {/* Первый контейнер */}
       <div>
         <Title
@@ -37,6 +96,7 @@ const ProjectDescription = () => {
             fontSize: 20,
             lineHeight: "24px",
             textAlign: "left",
+            marginBottom: "20px",
           }}
         >
           Сервис Газпром ID People
@@ -61,62 +121,43 @@ const ProjectDescription = () => {
           просматривать свои проекты и сохраненные контакты коллег.
         </Typography>
         <div style={{ marginTop: 16 }}>
-          <TagCloud />
+          <TagCloud data={data} />
         </div>
       </div>
 
-      {/* Разделение между блоками */}
-      <div style={{ height: 28 }} />
+      <Contact />
 
-      {/* Второй контейнер */}
-      <div style={{ padding: 16 }}>
-        <Title
-          level={3}
+      <Avatar.Group
+        size="large"
+        max={{
+          count: 2,
+          style: {
+            color: "white",
+            backgroundColor: "var(--main-blue)",
+            cursor: "pointer",
+          },
+          popover: {
+            trigger: "click",
+          },
+        }}
+      >
+        <Avatar src={icon} />
+        <Avatar
           style={{
-            fontWeight: 400,
-            fontSize: 16,
-            lineHeight: "24px",
-            textAlign: "left",
+            backgroundColor: "#87d068",
           }}
-        >
-          Команда проекта
-        </Title>
-        <Row gutter={24} style={{ marginBottom: 16, height: 62 }}>
-          <Row flex="1">
-            <Avatar size={40} style={{ marginRight: -8 }} />
-            <Flex>
-              <Typography>Алексеева Анна</Typography>
-              <Typography>Product Manager</Typography>
-            </Flex>
-          </Row>
-          <Col flex="1">
-            {/* Содержимое второго блока */}
-            <Text>Участник 2</Text>
-          </Col>
-          <Col flex="1">
-            {/* Содержимое третьего блока */}
-            <Text>Участник 3</Text>
-          </Col>
-        </Row>
-        <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-          <Avatar size={40} style={{ marginRight: -8 }} />
-          <Avatar size={40} style={{ marginRight: -8 }} />
-          <Avatar size={40} style={{ marginRight: -8 }} />
-          <Avatar size={40} style={{ marginRight: -8 }} />
-          <Avatar size={40} style={{ marginRight: -8 }} />
-          <Avatar size={40} style={{ marginRight: -8 }} />
-          <Avatar size={40} style={{ marginRight: -8 }} />
-          <Avatar size={40} style={{ marginRight: -8 }} />
-          <Avatar
-            size={40}
-            style={{ backgroundColor: "var(--main-blue)", marginRight: -8 }}
-          >
-            +2
-          </Avatar>
-        </div>
-      </div>
+          src={icon}
+        />
+        <Avatar
+          style={{
+            backgroundColor: "#1677ff",
+          }}
+          icon={icon}
+        />
+      </Avatar.Group>
+
     </StyledCard>
   );
 };
 
-export default ProjectDescription;
+export default ProjectCard;

@@ -1,4 +1,7 @@
+
+//todo , шрифты подключить, проверить мусор, написать ридми, настроить линтер
 import React from "react";
+import './App.css';
 import {
   BrowserRouter as Router,
   Routes,
@@ -14,6 +17,7 @@ import theme from "../shared/styles/theme";
 import MainPage from "../pages/main/MainPage";
 import AuthPage from "../pages/auth/AuthPage";
 // import ProjectsPage from "../pages/projects/ProjectsPage"; // страница проектов
+import StructurePage from "../pages/structure/Structure";
 
 const StyledMain = styled.main`
   overflow: auto;
@@ -41,6 +45,15 @@ function App() {
               element={
                 <ProtectedRoute isLoggedIn={isLoggedIn}>
                   <MainPage />
+                </ProtectedRoute>
+              }
+            />
+            {/* Защищенный маршрут для страницы со структурой компании */}
+            <Route
+              path="/structure"
+              element={
+                <ProtectedRoute isLoggedIn={isLoggedIn}>
+                  <StructurePage />
                 </ProtectedRoute>
               }
             />

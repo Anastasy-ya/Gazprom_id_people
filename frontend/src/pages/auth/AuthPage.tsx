@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import LogoImage from "../../shared/components/ui/LogoImage";
+import LogoImage from "../../shared/components/ui/LogoImage/LogoImage";
 import AuthForm from "../../features/auth/ui/AuthForm";
 
 const Container = styled.div`
@@ -16,7 +16,6 @@ function AuthPage() {
       style={{
         padding: 0,
         display: "flex",
-        // alignItems: "center",
         justifyContent: "center",
         flexWrap: "wrap",
 

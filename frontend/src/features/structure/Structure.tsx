@@ -1,4 +1,3 @@
-import React from 'react';
 import image from "../../shared/assets/structure_zone.png";
 import { useRef, useEffect } from "react";
 import Panzoom from "panzoom";

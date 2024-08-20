@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from "styled-components";
 import { Card, Typography, Avatar } from "antd";
 import TagCloud from "../features/Tags/Tags";

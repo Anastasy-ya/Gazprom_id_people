@@ -1,4 +1,3 @@
-import React from 'react';
 import { Tabs } from "antd";
 import { useNavigate } from "react-router-dom";
 

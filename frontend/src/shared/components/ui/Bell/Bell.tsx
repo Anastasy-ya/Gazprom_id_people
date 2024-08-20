@@ -1,4 +1,3 @@
-import React from 'react';
 import { Badge } from "antd";
 
 import { BellOutlined } from "@ant-design/icons";

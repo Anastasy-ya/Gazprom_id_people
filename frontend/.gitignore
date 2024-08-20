@@ -6,7 +6,6 @@ yarn-error.log*
 pnpm-debug.log*
 
 # Vite
-dist/
 .vite/
 .vite/deps
 .vite_cache/

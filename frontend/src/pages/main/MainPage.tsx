@@ -1,4 +1,3 @@
-import React from 'react';
 import { Layout } from "antd";
 import styled from "styled-components";
 import Header from "../../widgets/Header";

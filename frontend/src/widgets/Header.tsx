@@ -1,4 +1,3 @@
-import React from 'react';
 import { Layout, Avatar } from "antd";
 import { QuestionCircleOutlined } from "@ant-design/icons";
 import styled from "styled-components";

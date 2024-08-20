@@ -1,4 +1,3 @@
-import React from 'react';
 import { Row, Col, Typography, Avatar } from "antd";
 import styled from "styled-components";
 import icon from "../../shared/assets/icon.jpeg";

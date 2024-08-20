@@ -27,9 +27,11 @@ npm i
 ```
 npm run dev
 ```
-🔗 Тестовая версия приложения: [Ссылка](https://example.com)
+🔗 Тестовая версия приложения: [Ссылка](https://anastasy-ya.github.io/Gazprom_id_people/)
 <br>
-🔗 [Макет в Figma](https://example.com)
+🔗 [Макет в Figma](https://www.figma.com/design/jJQNNNO5lvkmTOzvhfc5dN/%D0%9A%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%B0-5.-%D0%A5%D0%B0%D0%BA%D0%B0%D1%82%D0%BE%D0%BD-%D0%93%D0%B0%D0%B7%D0%BF%D1%80%D0%BE%D0%BC?node-id=72-6110&t=LR0eb6Uj5dSSMx3m-0)
+<br>
+🔗 Бэкенд: [Ссылка](https://github.com/TatianaBelova333/Gazprom_id_people)
 
 ## Технологический стек
 

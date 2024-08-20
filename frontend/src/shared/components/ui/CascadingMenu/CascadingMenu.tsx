@@ -1,14 +1,9 @@
-import { 
-  Dropdown,
-  Space,
- } from "antd";
+import { Dropdown, Space } from "antd";
+import { DownOutlined } from "@ant-design/icons";
 
- import { DownOutlined } from '@ant-design/icons';
-
-const items = [
+const items: ItemType[] = [
   {
     key: "1",
-    type: "group",
     label: "Group title",
     children: [
       {
@@ -51,6 +46,13 @@ const items = [
     ],
   },
 ];
+
+interface ItemType {
+  key: string;
+  label: string;
+  children?: ItemType[];
+  disabled?: boolean;
+}
 
 function CascadingMenu() {
   return (

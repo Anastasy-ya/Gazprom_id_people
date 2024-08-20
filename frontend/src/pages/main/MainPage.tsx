@@ -1,15 +1,11 @@
-import {
-  Layout,
-  // Menu,
-  // Avatar,
-} from "antd";
+import { Layout } from "antd";
 import styled from "styled-components";
 import Header from "../../widgets/Header";
-import MenuMain from "../../shared/components/ui/Menu/Menu";
+import MenuMain from "../../features/Menu/Menu";
 import Button from "../../shared/components/ui/ButtonStyled/ButtonStyled";
 import ProjectCard from "../../widgets/ProjectCard";
-import NotesImage from '../../shared/components/ui/Notes/Notes';
-import Contacts from '../../features/contacts/Contacts';
+import NotesImage from "../../features/Notes/Notes";
+import Contacts from "../../features/contacts/Contacts";
 import { useNavigate } from "react-router-dom";
 
 const { Sider, Content } = Layout;
@@ -50,19 +46,10 @@ const RightColumn = styled.div`
 `;
 
 const ButtonStyled = styled(Button)`
-  margin-top: auto;// должно ли оно убегать вниз
+  margin-top: auto;
 `;
 
-// const BoundingBox = styled.div`
-//   max-width: 1440px;
-//   display: flex;
-//   /* column-gap: 40px; */
-//   /* justify-content: space-between; */
-//   align-items: center;
-// `;
-
 const MainPage = () => {
-
   const navigate = useNavigate();
 
   return (
@@ -76,11 +63,7 @@ const MainPage = () => {
           flexGrow: 1,
         }}
       >
-        <Sider
-          theme="light"
-          width={207}
-          // flexGrow=1,
-        >
+        <Sider theme="light" width={207}>
           <MenuMain />
           <ButtonStyled
             style={{ bottom: "24px", left: "24px", position: "absolute" }}
@@ -90,19 +73,17 @@ const MainPage = () => {
           </ButtonStyled>
         </Sider>
 
-        <StyledContent 
-        style={{
-          // backgroundColor: "red",
-          padding: 0,
-          // margin: "16px 0",
-        }}
+        <StyledContent
+          style={{
+            padding: 0,
+          }}
         >
           <ProjectCard />
           <ProjectCard />
         </StyledContent>
 
-        <RightColumn style={{ margin: '16px 0'}}>
-          <Contacts/>
+        <RightColumn style={{ margin: "16px 0" }}>
+          <Contacts />
           <NotesImage />
         </RightColumn>
       </Layout>

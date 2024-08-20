@@ -1,11 +1,9 @@
 import { Layout, Avatar } from "antd";
-import { BellOutlined, QuestionCircleOutlined } from "@ant-design/icons";
+import { QuestionCircleOutlined } from "@ant-design/icons";
 import styled from "styled-components";
 import LogoImage from "../shared/components/ui/LogoImage/LogoImage";
 import Bell from "../shared/components/ui/Bell/Bell";
-import icon from "../shared/assets/icon.jpeg"
-
-// const { Header } = Layout;
+import icon from "../shared/assets/icon.jpeg";
 
 const StyledHeader = styled(Layout.Header)`
   height: 80px;
@@ -22,16 +20,13 @@ const BoundingBox = styled.div`
 `;
 
 const WelcomeTextContainer = styled.div`
-  flex-grow: 1; /* Заполняет всё свободное пространство */
-  /* display: flex;
-  align-items: center; */
+  flex-grow: 1;
 `;
 
 const WelcomeText = styled.h1`
   margin: 0;
   font-size: 24px;
   text-align: left;
-  /* color: var(--main-blue); */
 `;
 
 const UserSection = styled.div`
@@ -39,16 +34,6 @@ const UserSection = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 226px;
-`;
-
-const Notifications = styled(BellOutlined)`
-  font-size: 24px;
-  margin-right: 16px;
-`;
-
-const HelpIcon = styled(QuestionCircleOutlined)`
-  font-size: 24px;
-  margin-right: 16px;
 `;
 
 const UserName = styled.span`
@@ -60,11 +45,6 @@ const LogoBackground = styled.div`
   width: 207px;
   height: 80px;
   background-color: white;
-`;
-
-const HeaderMainBlock = styled.div`
-  width: 100%;
-  height: 100%;
 `;
 
 const Header = () => {

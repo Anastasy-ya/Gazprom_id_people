@@ -1,10 +1,6 @@
-import {
-  Badge,
-} from "antd";
+import { Badge } from "antd";
 
-import {
-  BellOutlined,
-} from "@ant-design/icons";
+import { BellOutlined } from "@ant-design/icons";
 
 function Bell({ notifications }: { notifications: number }) {
   return (

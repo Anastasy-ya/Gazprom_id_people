@@ -1,7 +1,5 @@
-
-//todo , шрифты подключить, проверить мусор, написать ридми, настроить линтер
 import React from "react";
-import './App.css';
+import "./App.css";
 import {
   BrowserRouter as Router,
   Routes,
@@ -9,11 +7,8 @@ import {
   Navigate,
 } from "react-router-dom";
 import styled from "styled-components";
-import {
-  ConfigProvider,
-  // DatePicker,
-} from "antd";
-import theme from "../shared/styles/theme";
+import { ConfigProvider } from "antd";
+import theme from "../shared/styles/theme/theme";
 import MainPage from "../pages/main/MainPage";
 import AuthPage from "../pages/auth/AuthPage";
 // import ProjectsPage from "../pages/projects/ProjectsPage"; // страница проектов
@@ -69,19 +64,12 @@ function App() {
             {/* Маршрут для страницы авторизации */}
             <Route
               path="/auth"
-              element={<AuthPage 
-                setIsLoggedIn={setIsLoggedIn}
-                />}
+              element={<AuthPage setIsLoggedIn={setIsLoggedIn} />}
             />
             {/* Маршрут для страницы 404 */}
             <Route path="*" element={<div>404 - Page Not Found</div>} />
           </Routes>
         </Router>
-        {/* Готовые компоненты */}
-        {/* <CascadingMenu /> */}
-        {/* <DatePicker />
-        {/* <GiftOutlined /> */}
-        {/* Готовые компоненты */}
       </StyledMain>
     </ConfigProvider>
   );

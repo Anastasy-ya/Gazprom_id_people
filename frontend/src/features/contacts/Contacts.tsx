@@ -1,14 +1,11 @@
 import styled from "styled-components";
-import { Card, Typography, Avatar, Row, Col } from "antd";
-
+import { Card } from "antd";
 import Contact from "../contact/Contact";
-
-
 
 const StyledCard = styled(Card)`
   width: 618;
   border-radius: 2;
-  border: 1px solid #d9d9d9;
+  border: 1px solid var(--gray-light);
   margin: 0 0 16px;
 
   .ant-card-body {

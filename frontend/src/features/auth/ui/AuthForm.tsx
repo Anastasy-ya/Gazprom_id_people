@@ -1,8 +1,8 @@
+import React from 'react';
 import { useState } from "react";
 import { Form, Input, Tabs, Typography } from "antd";
 import styled from "styled-components";
 import Button from "../../../shared/components/ui/ButtonStyled/ButtonStyled";
-import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 
 const { Title } = Typography;
@@ -73,23 +73,19 @@ const StyledFormItem = styled(Form.Item)`
   }
 `;
 
-function AuthForm({setIsLoggedIn}) {
+interface AuthFormProps {
+  setIsLoggedIn: React.Dispatch<React.SetStateAction<boolean>>;
+}
 
+function AuthForm({ setIsLoggedIn }: AuthFormProps) {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
 
-  // const {
-  //   register,
-  //   handleSubmit,
-  //   formState: { errors },
-  // } = useForm();
-
-  const onSubmit = (e) => {
-    // console.log("button clicked");
+  const onSubmit = () => {
     setLoading(true);
     setTimeout(() => {
-      setIsLoggedIn('true');
-      navigate("/")
+      setIsLoggedIn(true);
+      navigate("/");
       setLoading(false);
     }, 2000);
   };
@@ -108,7 +104,6 @@ function AuthForm({setIsLoggedIn}) {
             name="login"
             initialValues={{ remember: true }}
             autoComplete="off"
-            // validateTrigger='onSubmit'
           >
             <StyledFormItem
               name="email"
@@ -139,7 +134,7 @@ function AuthForm({setIsLoggedIn}) {
                 htmlType="submit"
                 block
                 loading={loading}
-                onClick={(e) => onSubmit(e)}
+                onClick={() => onSubmit()}
               >
                 Войти
               </ButtonWithSize>
@@ -193,7 +188,7 @@ function AuthForm({setIsLoggedIn}) {
                 htmlType="submit"
                 block
                 loading={loading}
-                onClick={(e) => onSubmit(e)}
+                onClick={() => onSubmit()}
               >
                 Далее
               </ButtonWithSize>

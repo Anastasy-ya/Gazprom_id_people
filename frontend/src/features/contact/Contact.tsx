@@ -1,17 +1,14 @@
-import { Image, Row, Col, Typography, Avatar } from "antd";
+import React from 'react';
+import { Row, Col, Typography, Avatar } from "antd";
 import styled from "styled-components";
-// import UserOutlined from "@ant-design/icons";
 import icon from "../../shared/assets/icon.jpeg";
 import telegramIcon from "../../shared/assets/telegram.svg";
 import groupIcon from "../../shared/assets/group.svg";
 
 const Flex = styled.div`
   display: flex;
-  /* gap: 12px; */
   flex-direction: column;
 `;
-
-const { Title } = Typography;
 
 const Contact = () => (
   <div style={{ padding: 8 }} className="контейнер">
@@ -89,7 +86,6 @@ const Contact = () => (
                 fontSize: "14px",
                 fontWeight: 400,
                 lineHeight: "22px",
-                // textAlign: "left",
               }}
             >
               email@email.com
@@ -99,7 +95,6 @@ const Contact = () => (
                 fontSize: "14px",
                 fontWeight: 400,
                 lineHeight: "22px",
-                // textAlign: "left",
               }}
             >
               +7 (943) 132-45-67

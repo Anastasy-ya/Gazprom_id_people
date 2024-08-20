@@ -1,8 +1,9 @@
+import React from 'react';
 import {
   Image,
 } from "antd";
 import styled from "styled-components";
-import notes from '../../../assets/notes.svg';
+import notes from "../../shared/assets/notes.svg";
 
 const Notes = styled(Image)`
   max-width: 532px;
@@ -13,8 +14,7 @@ const NotesImage = () => (
   <Notes
     src={notes}
     preview={false}
-    alt='Заметки'
-      // style={{ cursor: 'pointer' }}
+    alt="Заметки"
   />
 );
 

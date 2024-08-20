@@ -1,7 +1,7 @@
+import React from 'react';
 import styled from "styled-components";
 import { Card, Typography, Avatar } from "antd";
-// import UserOutlined from "@ant-design/icons";
-import TagCloud from "../shared/components/ui/Tags/Tags";
+import TagCloud from "../features/Tags/Tags";
 import Contact from "../features/contact/Contact";
 import icon from "../shared/assets/icon.jpeg";
 
@@ -9,23 +9,16 @@ const { Title } = Typography;
 
 const StyledCard = styled(Card)`
   width: 618;
-  /* height: auto; */
   border-radius: 2;
   border: 1px solid #d9d9d9;
   margin: 0 0 16px;
-  /* display: flex;
-  flex-direction: column;
-  gap: 28px; */
 
   .ant-card-body {
     padding: 16px;
   }
-
-  /* background-color: red; */
 `;
 
 const data = {
-  //TODO заменить данными
   id: 0,
   name: "string",
   description: "string",

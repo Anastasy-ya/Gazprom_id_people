@@ -1,3 +1,5 @@
+@import '../shared/styles/fonts.css';
+
 body {
   margin: 0;
   padding: 0;
@@ -10,11 +12,7 @@ body {
   box-sizing: border-box;
 }
 
-* {
-  /* border: 1px red solid; */
-}
-
-/* для вставки - color: var(--yellow); */
+/* для вставки использовать var(--gray-light); */
 :root {
   --black: #212121;
 
@@ -53,7 +51,6 @@ body {
   --pale-red: #ffa39e;
   --red: #ff7875;
   --orange: #ffa940;
-
   --lavender: #d3adf7;
   --outsourcing: #fa8c16;
   --error: #ff603b;
@@ -61,7 +58,7 @@ body {
   --input-error: #f81d22;
 }
 
-body, h1, h2, h3, h4, h5, h6, p {
+body, h1, h2, h3, h4, h5, h6, p, article {
   margin: 0;
   padding: 0;
 }

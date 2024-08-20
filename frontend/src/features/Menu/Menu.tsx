@@ -1,6 +1,7 @@
+import React from 'react';
 import { Tabs } from "antd";
 import { useNavigate } from "react-router-dom";
-// import styled from "styled-components";
+
 import {
   UnorderedListOutlined,
   PartitionOutlined,
@@ -25,7 +26,7 @@ const menuItems = [
     key: "3",
     icon: <ProjectOutlined style={{ marginRight: 12 }} />,
     label: "Проекты",
-    path: "/", /*/projects */
+    path: "/",
   },
   {
     key: "4",
@@ -36,8 +37,7 @@ const menuItems = [
 ];
 
 function MenuMain() {
-  const navigate = useNavigate(); //выделить в отдельную сущность и импортировать в 
-  // баттон "выйти из системы", кнопки меню на всех страницах и лого, странице auth
+  const navigate = useNavigate();
 
   return (
     <div style={{ display: "flex", padding: "7vh 0 0" }}>
@@ -48,8 +48,8 @@ function MenuMain() {
           key: item.key,
           label: (
             <div
-              onClick={() => navigate(item.path)} // Добавляем обработчик клика для навигации
-              style={{ cursor: "pointer" }} // Добавляем стиль курсора для индикации кликабельности
+              onClick={() => navigate(item.path)}
+              style={{ cursor: "pointer" }}
             >
               {item.icon}
               {item.label}

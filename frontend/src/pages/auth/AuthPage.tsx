@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from "styled-components";
 import LogoImage from "../../shared/components/ui/LogoImage/LogoImage";
 import AuthForm from "../../features/auth/ui/AuthForm";
@@ -10,7 +11,11 @@ const Container = styled.div`
   gap: 85px;
 `;
 
-function AuthPage({setIsLoggedIn}) {
+interface AuthFormProps {
+  setIsLoggedIn: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+function AuthPage({ setIsLoggedIn }: AuthFormProps) {
   return (
     <section
       style={{
@@ -26,9 +31,7 @@ function AuthPage({setIsLoggedIn}) {
     >
       <Container>
         <LogoImage />
-        <AuthForm 
-          setIsLoggedIn={setIsLoggedIn} 
-        />
+        <AuthForm setIsLoggedIn={setIsLoggedIn} />
       </Container>
     </section>
   );

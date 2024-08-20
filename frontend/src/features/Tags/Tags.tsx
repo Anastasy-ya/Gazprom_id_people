@@ -1,4 +1,5 @@
-import {Tag} from 'antd';
+import React from 'react';
+import { Tag } from "antd";
 import styled from "styled-components";
 import { DataType } from "./types";
 
@@ -8,9 +9,9 @@ const StyledTag = styled(Tag)`
   margin: 4px;
   padding: 4px 8px;
   border-radius: 2px;
-  height: 28px;  
+  height: 28px;
   border: none;
-  /* Фикс для специфичных случаев, где цвет текста может быть переопределен */
+
   &.ant-tag {
     color: black;
   }
@@ -21,7 +22,6 @@ const Container = styled.div`
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
-
 `;
 
 const TagCloud = ({ data }: { data: DataType }) => {
@@ -36,16 +36,12 @@ const TagCloud = ({ data }: { data: DataType }) => {
   return (
     <Container>
       {data.tags.map((tag) => (
-        <StyledTag
-          key={tag.id}
-          color={tag.color}
-          bordered={false}
-        >
+        <StyledTag key={tag.id} color={tag.color} bordered={false}>
           {tag.name}
         </StyledTag>
       ))}
     </Container>
   );
-}
+};
 
 export default TagCloud;

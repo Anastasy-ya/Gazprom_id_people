@@ -2,8 +2,8 @@ import { Layout, Avatar } from "antd";
 import { BellOutlined, QuestionCircleOutlined } from "@ant-design/icons";
 import styled from "styled-components";
 import LogoImage from "../shared/components/ui/LogoImage/LogoImage";
-// import QuestionCircleOutlined from "@ant-design/icons";
 import Bell from "../shared/components/ui/Bell/Bell";
+import icon from "../shared/assets/icon.jpeg"
 
 // const { Header } = Layout;
 
@@ -76,7 +76,7 @@ const Header = () => {
     >
       <BoundingBox>
         <LogoBackground>
-          <LogoImage alt="Газпром People ID" />
+          <LogoImage />
         </LogoBackground>
         <WelcomeTextContainer>
           <WelcomeText>Добро пожаловать, Александр!</WelcomeText>
@@ -84,7 +84,7 @@ const Header = () => {
         <UserSection>
           <QuestionCircleOutlined />
           <Bell notifications={10} />
-          <Avatar src="https://path_to_user_photo.png" />
+          <Avatar src={icon} />
           <UserName>Александр</UserName>
         </UserSection>
       </BoundingBox>

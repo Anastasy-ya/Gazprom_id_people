@@ -24,7 +24,7 @@ const LogoImage = () => (
     preview={false}
     alt='Лого'
     onClick={handleLogoClick}
-      style={{ cursor: 'pointer' }}
+    style={{ cursor: 'pointer' }}
   />
 );
 

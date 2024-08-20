@@ -10,7 +10,7 @@ const Container = styled.div`
   gap: 85px;
 `;
 
-function AuthPage() {
+function AuthPage({setIsLoggedIn}) {
   return (
     <section
       style={{
@@ -25,8 +25,10 @@ function AuthPage() {
       }}
     >
       <Container>
-        <LogoImage alt="Газпром People ID" />
-        <AuthForm />
+        <LogoImage />
+        <AuthForm 
+          setIsLoggedIn={setIsLoggedIn} 
+        />
       </Container>
     </section>
   );

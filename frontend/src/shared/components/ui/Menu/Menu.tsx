@@ -1,9 +1,6 @@
-import {
-  Tabs,
-} from "antd";
-
-import styled from "styled-components";
-
+import { Tabs } from "antd";
+import { useNavigate } from "react-router-dom";
+// import styled from "styled-components";
 import {
   UnorderedListOutlined,
   PartitionOutlined,
@@ -14,54 +11,53 @@ import {
 const menuItems = [
   {
     key: "1",
-    icon: <AppstoreOutlined />,
+    icon: <AppstoreOutlined style={{ marginRight: 12 }} />,
     label: "Главная",
-    content: "Content for Структура компании", //
+    path: "/",
   },
   {
     key: "2",
-    icon: <UnorderedListOutlined />,
+    icon: <UnorderedListOutlined style={{ marginRight: 12 }} />,
     label: "Справочник",
-    content: "Content for Структура компании", //
+    path: "/",
   },
   {
     key: "3",
-    icon: <ProjectOutlined />,
+    icon: <ProjectOutlined style={{ marginRight: 12 }} />,
     label: "Проекты",
-    content: "Content for Структура компании", //
+    path: "/", /*/projects */
   },
   {
     key: "4",
-    icon: <PartitionOutlined />,
+    icon: <PartitionOutlined style={{ marginRight: 12 }} />,
     label: "Структура компании",
-    content: "Content for Структура компании",
+    path: "/structure",
   },
 ];
 
-const { TabPane } = Tabs;
-
-const StyledTab=styled(TabPane)`
-  padding: 0 0 300px; 
-  margin: 0 0 300px;
-  gap: 300px;
-`;
-
 function MenuMain() {
+  const navigate = useNavigate(); //выделить в отдельную сущность и импортировать в 
+  // баттон "выйти из системы", кнопки меню на всех страницах и лого, странице auth
+
   return (
-    <>
-      <div style={{ display: "flex", padding: "7vh 0 0" }}>
-        <Tabs
-          // activeKey={selectedKey}
-          // onChange={handleTabChange}
-          tabPosition="left"
-          tabBarStyle={{ padding: "12px 0", textAlign: "center" }}
-        >
-          {menuItems.map((item) => (
-            <StyledTab tab={item.label} key={item.key} icon={item.icon}></StyledTab>
-          ))}
-        </Tabs>
-      </div>
-    </>
+    <div style={{ display: "flex", padding: "7vh 0 0" }}>
+      <Tabs
+        tabPosition="left"
+        tabBarStyle={{ padding: "12px 0", textAlign: "center" }}
+        items={menuItems.map((item) => ({
+          key: item.key,
+          label: (
+            <div
+              onClick={() => navigate(item.path)} // Добавляем обработчик клика для навигации
+              style={{ cursor: "pointer" }} // Добавляем стиль курсора для индикации кликабельности
+            >
+              {item.icon}
+              {item.label}
+            </div>
+          ),
+        }))}
+      />
+    </div>
   );
 }
 

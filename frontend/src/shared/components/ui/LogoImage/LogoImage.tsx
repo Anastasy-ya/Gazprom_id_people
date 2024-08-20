@@ -3,6 +3,7 @@ import {
 } from "antd";
 import styled from "styled-components";
 import logo from '../../../assets/logo.svg';
+import { useNavigate } from "react-router-dom";
 
 const ResponsiveImage = styled(Image)`
   width: 100%;
@@ -14,18 +15,23 @@ const ResponsiveImage = styled(Image)`
   padding-top: 10px;
 `;
 
-function handleLogoClick() {
-  console.log('clicked logo')//TODO swith to main react router
-}
+// function handleLogoClick() {
+//   console.log('clicked logo')//TODO swith to main react router
+// }
 
-const LogoImage = () => (
-  <ResponsiveImage
-    src={logo}
-    preview={false}
-    alt='Лого'
-    onClick={handleLogoClick}
+function LogoImage() {
+
+  const navigate = useNavigate();
+
+  return (
+    <ResponsiveImage
+      src={logo}
+      preview={false}
+      alt='Лого'
+      onClick={() => navigate("/")}
       style={{ cursor: 'pointer' }}
-  />
-);
+    />
+  )
+}
 
 export default LogoImage;

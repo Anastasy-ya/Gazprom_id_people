@@ -1,12 +1,14 @@
 import {
   Layout,
-  // Menu,
   // Avatar,
 } from "antd";
+
 import styled from "styled-components";
 import Header from "../../widgets/Header";
 import MenuMain from "../../shared/components/ui/Menu/Menu";
 import Button from "../../shared/components/ui/ButtonStyled/ButtonStyled";
+import StructureImage from "../../features/structure/Structure";
+import { useNavigate } from "react-router-dom";
 
 const { Sider, Content } = Layout;
 
@@ -20,16 +22,16 @@ const AppLayout = styled(Layout)`
 `;
 
 const StyledContent = styled(Content)`
-  max-width: 618px;
+  max-width: 100%;
   min-width: 360px;
-  margin: 16px 16px 16px 40px;
-  position: relative;
-  flex-grow: 1;
-  padding: 0;
+  /* margin: 16px 16px 16px 40px; */
+  /* position: relative; */
+  /* flex-grow: 1;
+  padding: 0; */
 
   @media (max-width: 768px) {
-    width: 100%;
-    margin: 0;
+    /* width: 100%;
+    margin: 0; */
   }
 `;
 
@@ -37,15 +39,17 @@ const ButtonStyled = styled(Button)`
   margin-top: auto;
 `;
 
-const BoundingBox = styled.div`
-  max-width: 1440px;
-  display: flex;
-  /* column-gap: 40px; */
-  /* justify-content: space-between; */
-  align-items: center;
+const StyledImage = styled.img`
+  max-width: 100%;
+  max-height: 100%;
+  background-size: cover; /* Это дополнительно подгоняет изображение под размеры контейнера */
+  background-position: center; /* Это центрирует изображение */
 `;
 
-const StructurePage = () => {
+function StructurePage() {
+
+  const navigate = useNavigate();
+
   return (
     <AppLayout>
       <Header />
@@ -65,18 +69,21 @@ const StructurePage = () => {
           <MenuMain />
           <ButtonStyled
             style={{ bottom: "24px", left: "24px", position: "absolute" }}
+            onClick={() => navigate("/auth")}
           >
             Выйти из системы
           </ButtonStyled>
         </Sider>
 
-        <StyledContent 
-        style={{
-          // backgroundColor: "red",
-          padding: 0,
-          // margin: "16px 0",
-        }}
+        <StyledContent
+          style={{
+            // backgroundColor: "red",
+            padding: 0,
+            // margin: "16px 0",
+          }}
         >
+          {/* <StyledImage src={StructureImage} /> */}
+          <StructureImage />
           {/*содержание */}
         </StyledContent>
       </Layout>

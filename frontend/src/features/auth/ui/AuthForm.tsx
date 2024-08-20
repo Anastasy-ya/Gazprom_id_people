@@ -3,6 +3,7 @@ import { Form, Input, Tabs, Typography } from "antd";
 import styled from "styled-components";
 import Button from "../../../shared/components/ui/ButtonStyled/ButtonStyled";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 
 const { Title } = Typography;
 
@@ -72,19 +73,23 @@ const StyledFormItem = styled(Form.Item)`
   }
 `;
 
-function AuthForm() {
+function AuthForm({setIsLoggedIn}) {
+
+  const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+  // const {
+  //   register,
+  //   handleSubmit,
+  //   formState: { errors },
+  // } = useForm();
 
   const onSubmit = (e) => {
-    console.log("button clicked");
+    // console.log("button clicked");
     setLoading(true);
     setTimeout(() => {
+      setIsLoggedIn('true');
+      navigate("/")
       setLoading(false);
     }, 2000);
   };

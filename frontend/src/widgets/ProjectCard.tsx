@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Card, Typography, Avatar, Row, Col, Tooltip } from "antd";
+import { Card, Typography, Avatar } from "antd";
 // import UserOutlined from "@ant-design/icons";
 import TagCloud from "../shared/components/ui/Tags/Tags";
 import Contact from "../features/contact/Contact";
@@ -12,7 +12,7 @@ const StyledCard = styled(Card)`
   /* height: auto; */
   border-radius: 2;
   border: 1px solid #d9d9d9;
-  margin: 0;
+  margin: 0 0 16px;
   /* display: flex;
   flex-direction: column;
   gap: 28px; */
@@ -38,7 +38,7 @@ const data = {
     {
       id: 0,
       name: "В работе",
-      color: "#a8F",
+      color: "var(--yellow)",
     },
     {
       id: 1,
@@ -125,7 +125,22 @@ const ProjectCard = () => {
         </div>
       </div>
 
-      <Contact />
+      <div style={{ paddingTop: 28 }}>
+        <Title
+          level={3}
+          style={{
+            fontWeight: 400,
+            fontSize: 16,
+            lineHeight: "24px",
+            textAlign: "left",
+            paddingBottom: 0,
+            marginBottom: "8px",
+          }}
+        >
+          Команда проекта
+        </Title>
+        <Contact />
+      </div>
 
       <Avatar.Group
         size="large"
@@ -155,7 +170,6 @@ const ProjectCard = () => {
           icon={icon}
         />
       </Avatar.Group>
-
     </StyledCard>
   );
 };

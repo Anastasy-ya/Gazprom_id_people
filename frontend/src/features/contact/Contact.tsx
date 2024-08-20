@@ -14,115 +14,104 @@ const Flex = styled.div`
 const { Title } = Typography;
 
 const Contact = () => (
-  <div style={{ paddingTop: 28 }}>
-    <Title
-      level={3}
-      style={{
-        fontWeight: 400,
-        fontSize: 16,
-        lineHeight: "24px",
-        textAlign: "left",
-        paddingBottom: 0,
-        marginBottom: "8px",
-      }}
-    >
-      Команда проекта
-    </Title>
-
-    <div style={{ padding: 8 }} className="контейнер">
-      <Row gutter={24} align="middle">
-        <Col
+  <div style={{ padding: 8 }} className="контейнер">
+    <Row gutter={24} align="middle">
+      <Col
+        style={{
+          display: "flex",
+          alignItems: "center",
+        }}
+      >
+        <div
           style={{
+            width: 170,
+            height: 36,
             display: "flex",
-            alignItems: "center",
+            alignItems: "flex-start",
           }}
         >
           <div
             style={{
-              width: 170,
-              height: 36,
+              padding: "2px",
+              borderRadius: "50%",
+              border: "2px solid var(--main-blue)",
               display: "flex",
-              alignItems: "flex-start",
+              alignItems: "center",
+              justifyContent: "flex-start",
+              marginRight: 8,
             }}
           >
-            <div
+            <Avatar size={32} src={icon} />
+          </div>
+          <Flex>
+            <Typography
               style={{
-                padding: "2px",
-                borderRadius: "50%",
-                border: "2px solid var(--main-blue)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "flex-start",
-                marginRight: 8,
+                fontSize: "14px",
+                fontWeight: 700,
+                lineHeight: "22px",
+                textAlign: "left",
               }}
             >
-              <Avatar
-                size={32}
-                src={icon}
-              />
-            </div>
-            <Flex>
-              <Typography
-                style={{
-                  fontSize: "14px",
-                  fontWeight: 700,
-                  lineHeight: "22px",
-                  textAlign: "left",
-                }}
-              >
-                Алексеева Анна
-              </Typography>
-              <Typography
-                style={{
-                  fontSize: "12px",
-                  fontWeight: 700,
-                  lineHeight: "20px",
-                  textAlign: "left",
-                }}
-              >
-                Product Manager
-              </Typography>
-            </Flex>
-          </div>
-        </Col>
-        <Col
+              Алексеева Анна
+            </Typography>
+            <Typography
+              style={{
+                fontSize: "12px",
+                fontWeight: 700,
+                lineHeight: "20px",
+                textAlign: "left",
+              }}
+            >
+              Product Manager
+            </Typography>
+          </Flex>
+        </div>
+      </Col>
+      <Col
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+        }}
+      >
+        <div
           style={{
+            width: 250,
+            height: 50,
             display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
+            gap: 28,
+            paddingTop: 5,
           }}
         >
-          <div style={{ width: 250, height: 50, display: "flex", gap: 28, paddingTop: 5 }}>
-            <div>
-              <Typography
-                style={{
-                  fontSize: "14px",
-                  fontWeight: 400,
-                  lineHeight: "22px",
-                  // textAlign: "left",
-                }}
-              >
-                email@email.com
-              </Typography>
-              <Typography
-                style={{
-                  fontSize: "14px",
-                  fontWeight: 400,
-                  lineHeight: "22px",
-                  // textAlign: "left",
-                }}
-              >
-                +7 (943) 132-45-67
-              </Typography>
-            </div>
-            <Avatar.Group shape="square" style={{ display: "flex", gap: 12 }}>
-              <Avatar size={32} src={telegramIcon}></Avatar>
-              <Avatar size={32} src={groupIcon}></Avatar>
-            </Avatar.Group>
+          <div>
+            <Typography
+              style={{
+                fontSize: "14px",
+                fontWeight: 400,
+                lineHeight: "22px",
+                // textAlign: "left",
+              }}
+            >
+              email@email.com
+            </Typography>
+            <Typography
+              style={{
+                fontSize: "14px",
+                fontWeight: 400,
+                lineHeight: "22px",
+                // textAlign: "left",
+              }}
+            >
+              +7 (943) 132-45-67
+            </Typography>
           </div>
-        </Col>
-      </Row>
-    </div>
+          <Avatar.Group shape="square" style={{ display: "flex", gap: 12 }}>
+            <Avatar size={32} src={telegramIcon}></Avatar>
+            <Avatar size={32} src={groupIcon}></Avatar>
+          </Avatar.Group>
+        </div>
+      </Col>
+    </Row>
   </div>
 );
 

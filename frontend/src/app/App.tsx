@@ -69,7 +69,9 @@ function App() {
             {/* Маршрут для страницы авторизации */}
             <Route
               path="/auth"
-              element={<AuthPage setIsLoggedIn={setIsLoggedIn} />}
+              element={<AuthPage 
+                setIsLoggedIn={setIsLoggedIn}
+                />}
             />
             {/* Маршрут для страницы 404 */}
             <Route path="*" element={<div>404 - Page Not Found</div>} />

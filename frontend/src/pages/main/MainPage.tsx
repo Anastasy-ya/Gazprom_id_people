@@ -10,6 +10,7 @@ import Button from "../../shared/components/ui/ButtonStyled/ButtonStyled";
 import ProjectCard from "../../widgets/ProjectCard";
 import NotesImage from '../../shared/components/ui/Notes/Notes';
 import Contacts from '../../features/contacts/Contacts';
+import { useNavigate } from "react-router-dom";
 
 const { Sider, Content } = Layout;
 
@@ -49,18 +50,21 @@ const RightColumn = styled.div`
 `;
 
 const ButtonStyled = styled(Button)`
-  margin-top: auto;
+  margin-top: auto;// должно ли оно убегать вниз
 `;
 
-const BoundingBox = styled.div`
-  max-width: 1440px;
-  display: flex;
-  /* column-gap: 40px; */
-  /* justify-content: space-between; */
-  align-items: center;
-`;
+// const BoundingBox = styled.div`
+//   max-width: 1440px;
+//   display: flex;
+//   /* column-gap: 40px; */
+//   /* justify-content: space-between; */
+//   align-items: center;
+// `;
 
 const MainPage = () => {
+
+  const navigate = useNavigate();
+
   return (
     <AppLayout>
       <Header />
@@ -80,6 +84,7 @@ const MainPage = () => {
           <MenuMain />
           <ButtonStyled
             style={{ bottom: "24px", left: "24px", position: "absolute" }}
+            onClick={() => navigate("/auth")}
           >
             Выйти из системы
           </ButtonStyled>
@@ -96,7 +101,7 @@ const MainPage = () => {
           <ProjectCard />
         </StyledContent>
 
-        <RightColumn>
+        <RightColumn style={{ margin: '16px 0'}}>
           <Contacts/>
           <NotesImage />
         </RightColumn>
